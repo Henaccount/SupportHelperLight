@@ -7,7 +7,7 @@ Manual:
 
 you need to create a string property called "ParameterExtract" for your pipe run components
 
-(unzip the SupportsUtils.txt and rename it to SupportsUtils.dll), put it into C:\Program Files\Autodesk\AutoCAD 20XX\PLNT3D
+compile the code to get SupportsUtils.dll, put it into C:\Program Files\Autodesk\AutoCAD 20XX\PLNT3D
 
 It has to be loaded with “netload”
 
@@ -19,23 +19,22 @@ for automatic loading (use slashes not backslashes):
 integrate the command in your custom save button if you want:
 https://knowledge.autodesk.com/community/article/166081
 
-The commands are: 
+The available commands from this code are: 
 "exposeParams" : put supports design parameters in the "ParameterExtract" field
 "exposeParamsAll" : put supports and pipeinlineasset design parameters in the "ParameterExtract" field
 "exposeParamsHelp" : showing help on the command line
 
-If the dll doesn't load or giving errors, add the following line (in Red) to acad.exe.config (AutoCAD installation folder):
+If the dll doesn't load or giving errors, add the 2nd line "<load.." to acad.exe.config (AutoCAD installation folder):
    <runtime>        
                <generatePublisherEvidence enabled="false"/>   
                <loadFromRemoteSources enabled="true"/> 
    </runtime>
 
 
-It will loop through all supports in the drawing and copies the design parameter to the Property field: “ParameterExtract”.
+The script will loop through all supports in the drawing and copies the design parameter to the Property field: “ParameterExtract”.
 
 Tipp: Use e.g. H=0,L=0 in the DesignParams field to just expose those two parameters, do it in the catalog already.
 
-There is no trouble expected, but if you experience any wrong behavior, errors or crashes, please report to me asap.
 
 This has not been tested sufficiently, of course use at own risk!
 
