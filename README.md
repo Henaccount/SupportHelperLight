@@ -1,8 +1,6 @@
 # SupportHelperLight
 
 
-12:19 15.05.2020
-
 Manual:
 
 you need to create a string property called "ParameterExtract" for your pipe run components
